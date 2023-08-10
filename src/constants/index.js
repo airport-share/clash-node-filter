@@ -194,8 +194,12 @@ httpsAgent.options.rejectUnauthorized = false;
 
 const API_BASE_URL = `http://127.0.0.1:9090`;
 
+// const Authorization = `Bearer 60c2042b-e746-4458-be16-1ba3957a824a`;
+const Authorization = ``;
+
 module.exports = {
   API_BASE_URL,
   countryMap,
   httpsAgent,
+  Authorization
 };

@@ -8,7 +8,7 @@ const {
   getTransLink,
   sendMessageToTelegramBot,
 } = require('./utils');
-const { countryMap, httpsAgent, API_BASE_URL } = require('./constants');
+const { countryMap, httpsAgent, API_BASE_URL,Authorization } = require('./constants');
 
 const { auth, telegramBotToken, chatIds, configPath } = require('../config');
 
@@ -28,7 +28,11 @@ async function getDelay(i) {
       // 'http://www.gstatic.com/generate_204'
       // 'https://www.google.com/generate_204'
       'http://cp.cloudflare.com/generate_204'
-    )}`
+    )}`, {
+      headers: {
+        Authorization
+      }
+    }
   );
   console.log(name, delay);
   return { ...i, delay };
@@ -133,7 +137,11 @@ async function run() {
 run();
 
 async function changeNode(name) {
-  await axios.put(`${API_BASE_URL}/proxies/GLOBAL`, { name });
+  await axios.put(`${API_BASE_URL}/proxies/GLOBAL`, { name }, {
+    headers: {
+      Authorization
+    }
+  });
 }
 
 // 自动

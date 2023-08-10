@@ -51,11 +51,21 @@ CFW 中的控制端口是随机的
 ![Alt text](image.png)
 network tab下查看请求的url
 ![Alt text](image-1.png)
-将 `src/constants/index.js` 中的 `API_BASE_URL` 替换
+将 `src/constants/index.js` 中的 `API_BASE_URL` 后面的 `9090` 替换
 ```JavaScript
 const API_BASE_URL = `http://127.0.0.1:9090`;
 ```
+
+貌似cfw的首页有端口
+![Alt text](image-2.png)
 好像需要登录, 我看看怎么弄
+
+复制这个 `Authorization: `后面的 `Bearer 60c2042b-e746-4458-be16-1ba3957a824a`
+![Alt text](image-3.png)
+
+放到 `src/constants/index.js` 中的 `Authorization`
+
+
 
 
 ## 获取当前clash配置文件路径
