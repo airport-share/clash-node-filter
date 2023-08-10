@@ -45,6 +45,19 @@ npm i
 显示内容包含clash即可, 我这里是 clashMeta
 ![Alt text](assets/image-6.png)
 
+> 使用 CFW (clash for windows) 的同学注意
+CFW 中的控制端口是随机的
+可以通过 右键图标 -> 更多 -> 打开开发者工具
+![Alt text](image.png)
+network tab下查看请求的url
+![Alt text](image-1.png)
+将 `src/constants/index.js` 中的 `API_BASE_URL` 替换
+```JavaScript
+const API_BASE_URL = `http://127.0.0.1:9090`;
+```
+好像需要登录, 我看看怎么弄
+
+
 ## 获取当前clash配置文件路径
 
 点击 clash图标 -> 配置 -> 打开配置文件夹

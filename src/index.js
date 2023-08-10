@@ -22,7 +22,7 @@ async function getDelay(i) {
   const {
     data: { delay },
   } = await axios.get(
-    `http://127.0.0.1:9090/proxies/${encodeURIComponent(
+    `${API_BASE_URL}/proxies/${encodeURIComponent(
       name
     )}/delay?timeout=2000&url=${encodeURIComponent(
       // 'http://www.gstatic.com/generate_204'
